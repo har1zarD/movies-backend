@@ -1,0 +1,65 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Potvrda rezervacije karte u kinu</title>
+  </head>
+
+  <body>
+    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+      <h1 style="color: #333333; margin-bottom: 5px;">E-TICKET</h1>
+      <div class="text-img" style="justify-content: space-between; display: flex;">
+        <ul style="margin-top: 36px; margin-bottom: 10px; list-style: none; padding-left: 0; font-size: 20px;">
+          <li><strong>VRIJEME:</strong> {{movieData.projection}}</li>
+          <li><strong>DATUM:</strong> {{movieData.selectedDate}}</li>
+          <li><strong>FILM:</strong> {{movieData.title}}</li>
+          <li><strong>KINO:</strong> PIM Cinema</li>
+          <li><strong>SALA:</strong> {{movieData.hall}}</li>
+          <li><strong>BROJ KARTI:</strong> {{movieData.ticketQuantity}}</li>
+          <li><strong>CIJENA:</strong> {{movieData.price}} KM</li>
+          <li><strong>UKUPNO:</strong> {{movieData.saldo}} KM</li>
+        </ul>
+        <img
+          class="text-img"
+          style="margin-right: 70px; margin-left: 50px; margin-top: 36px; width: 200px; height: 300px;"
+          src="{{movieData.image}}"
+          alt="Movie"
+        />
+      </div>
+
+      <div style="margin-top: 20px; margin-bottom: 10px; font-size: 15px;">
+        <p>
+          Idite direktno u salu, bez čekanja u redu na blagajni, i pokažite QR kod
+        </p>
+        <p>
+          Via mobile phone: Pokažite ovaj email potvrde sa QR kodom ili koristite mobilnu aplikaciju i pokažite QR kod
+          kroz "Moje ulaznice"!
+        </p>
+        <p>
+          Via print out: Pokažite QR kod, molimo vas da ne savijate QR kod i da ga zaštitite od vlage i prljavštine.
+        </p>
+        <p>
+          Vodite računa o vašem QR kodu! Nakon prve provjere, nije moguće koristiti ovaj QR kod za ulaz.
+        </p>
+        <p>
+          Ako ste kupili više ulaznica, molimo vas da imate na umu: Sve osobe za koje ste kupili ulaznice, treba da uđu
+          zajedno.
+        </p>
+      </div>
+      <p class="print-out" style="margin-top: 10px; font-weight: bold; font-size: 14px; color: #888888;">Broj za
+        preuzimanje:
+        <span style="font-size: 19px; font-weight: bold;">{{movieData.randomString}}</span>
+      </p>
+      <p>
+        <img
+          class="qrcode"
+          style="margin-top: 15px; display: block; margin-left: auto; margin-right: auto; border-style: 2px dashed;"
+          src="https://api.qrserver.com/v1/create-qr-code/?data={{movieData.randomString}}&amp;size=200x200"
+          alt="QR Code"
+        />
+
+      </p>
+    </div>
+  </body>
+
+</html>
