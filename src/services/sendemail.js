@@ -37,13 +37,13 @@ exports.sendEmail = async (email, templateName, movieData) => {
   const emailSubject = getSubject(template);
 
   const msg = {
-    from: '"PIM Cinema" pimcinema@outlook.com', // sender address
-    to: `${email}`, // list of receivers
-    subject: emailSubject, // Subject line
-    template: templateName, //template
+    from: '"PIM Cinema" pimcinema@outlook.com',
+    to: `${email}`,
+    subject: emailSubject,
+    template: templateName,
     context: { movieData },
   };
-  // send mail with defined transport object
+
   const info = await transporter.sendMail(msg);
 
   console.log("Message sent: %s", info.messageId);
@@ -55,7 +55,7 @@ exports.sendEmail = async (email, templateName, movieData) => {
     if (match && match[1]) {
       return match[1];
     } else {
-      return "PIM Cinema"; //default subject
+      return "PIM Cinema";
     }
   }
 };
