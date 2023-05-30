@@ -9,7 +9,9 @@
     <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
       <h1 style="color: #333333; margin-bottom: 5px;">E-TICKET</h1>
       <div class="text-img" style="justify-content: space-between; display: flex;">
-        <ul style="margin-top: 36px; margin-bottom: 10px; list-style: none; padding-left: 0; font-size: 20px;">
+        <ul
+          style="margin-top: 36px; margin-bottom: 10px; list-style: none; padding-left: 0; font-size: 20px; color:black;"
+        >
           <li><strong>VRIJEME:</strong> {{movieData.projection}}</li>
           <li><strong>DATUM:</strong> {{movieData.selectedDate}}</li>
           <li><strong>FILM:</strong> {{movieData.title}}</li>
@@ -18,16 +20,17 @@
           <li><strong>BROJ KARTI:</strong> {{movieData.ticketQuantity}}</li>
           <li><strong>CIJENA:</strong> {{movieData.price}} KM</li>
           <li><strong>UKUPNO:</strong> {{movieData.saldo}} KM</li>
+
         </ul>
         <img
           class="text-img"
-          style="margin-right: 70px; margin-left: 50px; margin-top: 36px; width: 200px; height: 300px;"
+          style="margin-right: 70px; margin-left: 50px; margin-top: 25px; width: 200px; height: 300px;"
           src="{{movieData.image}}"
           alt="Movie"
         />
       </div>
 
-      <div style="margin-top: 20px; margin-bottom: 10px; font-size: 15px;">
+      <div style="margin-top: 20px; margin-bottom: 10px; font-size: 15px; color:black;">
         <p>
           Idite direktno u salu, bez čekanja u redu na blagajni, i pokažite QR kod
         </p>
